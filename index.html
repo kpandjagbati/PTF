@@ -1,10 +1,27 @@
 <!doctype html>
-<html lang="en" data-theme="night">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("aris-theme");
+        document.documentElement.setAttribute("data-theme", t || "night");
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio d'Aristide KPANDJA — Software Engineer en formation, spécialisé en React, TypeScript et développement web full-stack."
+    />
+    <meta name="author" content="Aristide KPANDJA" />
+    <meta property="og:title" content="Aristide KPANDJA | Aris.Dev" />
+    <meta
+      property="og:description"
+      content="Développeur full-stack passionné par React, TypeScript et les applications web performantes."
+    />
+    <meta property="og:type" content="website" />
+    <title>Aristide KPANDJA | Aris.Dev — Portfolio</title>
   </head>
   <body>
     <div id="root"></div>

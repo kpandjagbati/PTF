@@ -1,38 +1,64 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Experiences from "./components/Experiences";
-import Certifications from "./components/Certifications";
-import Projects from "./components/projects";
-import Footer from "./components/Footer";
-import ContactForm from "./components/ContactForm";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage";
+import CertificationsPage from "./pages/CertificationsPage";
+import ProjectsDevPage from "./pages/ProjectsDevPage";
+import ProjectsDesignPage from "./pages/ProjectsDesignPage";
+import ProjectsDesignGroupPage from "./pages/ProjectsDesignGroupPage";
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
 
   return (
-    <div>
-
-      <div className="p-5 md:px-[15%]">
-         <Navbar/>
-         <Home onContactClick={() => setShowContactForm(true)} />
-      </div>
-
-      <About/>
-
-      <div className="p-5 md:px-[15%]">
-      <Experiences/>
-      <Certifications />
-      <Projects/>
-    </div>
-
-     <Footer onContactClick={() => setShowContactForm(true)} />
-
-      {showContactForm && (
-        <ContactForm onClose={() => setShowContactForm(false)} />
-      )}
-    </div>    
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route
+          element={
+            <Layout
+              onContactClick={() => setShowContactForm(true)}
+              showContactForm={showContactForm}
+              onCloseContact={() => setShowContactForm(false)}
+            />
+          }
+        >
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/certifications"
+            element={
+              <main className="p-5 md:px-[15%]">
+                <CertificationsPage />
+              </main>
+            }
+          />
+          <Route
+            path="/projets/developpement"
+            element={
+              <main className="p-5 md:px-[15%]">
+                <ProjectsDevPage />
+              </main>
+            }
+          />
+          <Route
+            path="/projets/design"
+            element={
+              <main className="p-5 md:px-[15%]">
+                <ProjectsDesignPage />
+              </main>
+            }
+          />
+          <Route
+            path="/projets/design/:rubric"
+            element={
+              <main className="p-5 md:px-[15%]">
+                <ProjectsDesignGroupPage />
+              </main>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-export default App
+
+export default App;

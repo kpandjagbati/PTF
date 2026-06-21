@@ -1,5 +1,7 @@
+import type { Variants } from "framer-motion";
+
 // Animation pour les titres principaux
-export const title3D = {
+export const title3D: Variants = {
     hidden: {
         opacity: 0,
         y: 30,
@@ -24,13 +26,13 @@ export const title3D = {
         rotateX: [0, 5, -5, 2, -2, 0],
         transition: {
             duration: 1.5,
-            ease: "easeInOut"
+            ease: "easeInOut" as const
         }
     }
 };
 
 // Animation pour les sous-titres
-export const subtitle3D = {
+export const subtitle3D: Variants = {
     hidden: {
         opacity: 0,
         y: 20,
@@ -57,7 +59,7 @@ export const subtitle3D = {
 };
 
 // Animation pour les paragraphes
-export const paragraph3D = {
+export const paragraph3D: Variants = {
     hidden: {
         opacity: 0,
         y: 15,
@@ -69,20 +71,20 @@ export const paragraph3D = {
         rotateX: 0,
         transition: {
             duration: 0.8,
-            ease: [0.16, 0.77, 0.47, 0.97]
+            ease: [0.16, 0.77, 0.47, 0.97],
         }
     },
     hover: {
         rotateZ: [0, 0.5, -0.5, 0],
         transition: {
             duration: 0.5,
-            ease: "easeInOut"
+            ease: "easeInOut" as const
         }
     }
 };
 
 // Animation pour les boutons
-export const button3D = {
+export const button3D: Variants = {
     hidden: {
         opacity: 0,
         y: 10,
@@ -94,7 +96,7 @@ export const button3D = {
         rotateX: 0,
         transition: {
             duration: 0.6,
-            ease: [0.16, 0.77, 0.47, 0.97]
+            ease: [0.16, 0.77, 0.47, 0.97],
         }
     },
     hover: {
@@ -114,7 +116,7 @@ export const button3D = {
 };
 
 // Animation pour les conteneurs
-export const container3D = {
+export const container3D: Variants = {
     hidden: { opacity: 0 },
     visible: (delay: number = 0) => ({
         opacity: 1,
@@ -127,7 +129,7 @@ export const container3D = {
 };
 
 // Animation pour les cartes et éléments en grille
-export const card3D = {
+export const card3D: Variants = {
     hidden: {
         opacity: 0,
         y: 20,
@@ -140,7 +142,7 @@ export const card3D = {
         transition: {
             delay: i * 0.1,
             duration: 0.6,
-            ease: [0.16, 0.77, 0.47, 0.97]
+            ease: [0.16, 0.77, 0.47, 0.97],
         }
     }),
     hover: {
@@ -157,7 +159,7 @@ export const card3D = {
 };
 
 // Animation pour les images
-export const image3D = {
+export const image3D: Variants = {
     hidden: {
         opacity: 0,
         scale: 0.9,
@@ -169,14 +171,14 @@ export const image3D = {
         rotateY: 0,
         transition: {
             duration: 0.8,
-            ease: [0.16, 0.77, 0.47, 0.97]
+            ease: [0.16, 0.77, 0.47, 0.97],
         }
     },
     hover: {
         rotateY: [0, 5, -5, 0],
         transition: {
             duration: 2,
-            ease: "easeInOut"
+            ease: "easeInOut" as const
         }
     }
 };

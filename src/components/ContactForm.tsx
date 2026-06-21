@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykvpyra';
 
@@ -71,16 +72,24 @@ const ContactForm = ({ onClose }: { onClose: () => void }) => {
     };
 
     return (
-        <div
+        <motion.div
             className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
             onClick={onClose}
             role="presentation"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
         >
-            <div
+            <motion.div
                 className="bg-base-100 p-6 rounded-lg shadow-xl w-full max-w-md"
                 onClick={(e) => e.stopPropagation()}
                 role="dialog"
                 aria-labelledby="contact-form-title"
+                initial={{ opacity: 0, scale: 0.85, y: 40, rotateX: 8 }}
+                animate={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                transition={{ type: "spring", stiffness: 280, damping: 22 }}
+                style={{ transformPerspective: 800 }}
             >
                 <div className="flex justify-between items-center mb-4">
                     <h3 id="contact-form-title" className="text-xl font-bold">Me contacter</h3>
@@ -167,8 +176,8 @@ const ContactForm = ({ onClose }: { onClose: () => void }) => {
                         </div>
                     </form>
                 )}
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 };
 

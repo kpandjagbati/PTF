@@ -1,72 +1,77 @@
-import Title from "./Title"
-import img from "../assets/image_cv2.jpeg"
-import {  LetterText, Paintbrush } from "lucide-react"
-    
+import Title from "./Title";
+import img from "../assets/image_cv2.jpeg";
+import { Layout, Server, Paintbrush } from "lucide-react";
+import { motion } from "framer-motion";
+import { BlurFade } from "./ui/blur-fade";
 
 const aboutSections = [
-    {
-        id: 1,
-        title: "Front-end developer",
-        description:"I specialize in creating dynamic and high-performance web applications using modern JavaScript frameworks such as React and Vue.js. My focus is on building complex and maintainable user interfaces with an emphasis on optimization, component reuse, and writing clear, tested code.",
-        Icon: <LetterText className="text-info scale-150"/>,
-    },
-    {
-        id: 2,
-        title: "Back-end developer",
-        description:"I have experience in building robust and scalable server-side applications using Node.js and Express. I am proficient in designing RESTful APIs, managing databases, and ensuring the security and performance of back-end systems.",
-        Icon: <LetterText className="text-info scale-150"/>,
-    },
-    
-    {
-        id: 3,
-        title: "UI/UX Designer",
-        description:"I have a keen eye for design and user experience. I am skilled in creating intuitive and visually appealing interfaces that enhance user engagement and satisfaction. My design process involves user research, wireframing, prototyping, and usability testing to ensure optimal user experiences.",
-        Icon: <Paintbrush className="text-info scale-150"/>,
-    },
-]
+  {
+    id: 1,
+    title: "Front-end Developer",
+    description:
+      "Interfaces modernes avec React, TypeScript et Tailwind CSS. Je m'attache à la performance, la réutilisabilité des composants et une UX soignée.",
+    Icon: Layout,
+  },
+  {
+    id: 2,
+    title: "Back-end Developer",
+    description:
+      "APIs REST avec Node.js et Express, gestion de bases de données et bonnes pratiques de sécurité pour des applications fiables et scalables.",
+    Icon: Server,
+  },
+  {
+    id: 3,
+    title: "UI/UX Designer",
+    description:
+      "Conception d'interfaces intuitives : recherche utilisateur, wireframes, prototypage et tests pour des expériences engageantes.",
+    Icon: Paintbrush,
+  },
+];
+
 const About = () => {
-    return (
-        <div className="bg-base-300 p-10 mb-10 md:mb-32">
-            <Title title="About Us"></Title>
-            <div className="md:h-screen  flex justify-center items-center md:space-x-10 space-y-10 md:space-y-0 flex-col md:flex-row">
-                <div className="hidden md:block">
-                    <img
+  return (
+    <section id="about" className="section-spacing bg-base-300 p-10 mb-10 md:mb-24 overflow-hidden">
+      <Title title="À propos de moi" />
+      <div className="flex justify-center items-center md:space-x-10 space-y-10 md:space-y-0 flex-col md:flex-row">
+        <BlurFade inView delay={0.2} direction="left" className="hidden md:block shrink-0">
+          <motion.img
             src={img}
-            alt=""
-            className="w-96 object-cover  rounded-xl "
-            
+            alt="Aristide KPANDJA"
+            className="w-96 max-h-[32rem] object-cover object-top rounded-2xl shadow-2xl ring-2 ring-info/20"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           />
+        </BlurFade>
+
+        <div className="md:ml-4 space-y-5 w-full max-w-md">
+          {aboutSections.map((section, index) => (
+            <BlurFade
+              key={section.id}
+              inView
+              delay={0.15 + index * 0.1}
+              direction="right"
+            >
+              <div className="card-hover flex flex-col md:flex-row items-center bg-base-100 p-5 rounded-2xl md:w-96 shadow-lg border border-base-content/5">
+                <motion.div
+                  className="mb-2 md:mb-0 shrink-0"
+                  whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <section.Icon className="text-info w-8 h-8" />
+                </motion.div>
+                <div className="md:ml-4 text-center md:text-left">
+                  <h2 className="text-xl font-bold mb-1">{section.title}</h2>
+                  <p className="text-sm text-base-content/75">{section.description}</p>
                 </div>
-
-
-                <div className="md:ml-4 space-y-5">
-                    {aboutSections.map((section)  => (
-                        <div key={section.id}
-                        className="flex flex-col md:flex-row items-center bg-base-100 p-5 rounded-2xl md:w-96 shadow-2xl"
-                        >
-                            <div className="mb-2 md:0">
-                                {section.Icon}
-                            </div>
-                            <div className="md:ml-4 text-center md:text-left">
-                                <h2 className="text-2xl font-bold mb-1">
-                                    {section.title }
-                                </h2>
-                                <p className="text-sm">
-                                    {section.description} 
-                                </p>
-                            </div>
-                        </div>
-                    ))
-                      
-                    
-
-                    }
-                </div>
-
-            </div>
+              </div>
+            </BlurFade>
+          ))}
         </div>
-    )
-}
-export default About
+      </div>
+    </section>
+  );
+};
 
- 
+export default About;

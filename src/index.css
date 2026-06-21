@@ -1,7 +1,215 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-    themes: night
+    themes: night --default, dark, dim, synthwave, cyberpunk, dracula, aqua, sunset, luxury, light, winter, pastel;
 }
 
-;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  @apply bg-base-100 text-base-content antialiased;
+}
+
+::selection {
+  background: color-mix(in oklch, var(--color-info) 35%, transparent);
+}
+
+.section-spacing {
+  @apply scroll-mt-24;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+}
+
+@keyframes skills-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.skills-marquee-track {
+  animation: skills-marquee-scroll 35s linear infinite;
+}
+
+.skills-marquee-wrapper:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee-track {
+    animation: none;
+  }
+
+  .skills-marquee-wrapper .overflow-hidden {
+    display: none;
+  }
+
+  .skills-marquee-static {
+    display: flex !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.profile-blob {
+  --blob-radius: 38% 62% 58% 42% / 42% 38% 62% 58%;
+  border-radius: var(--blob-radius);
+}
+
+.profile-blob-ring {
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--color-info) 90%, white),
+    color-mix(in oklch, var(--color-primary) 80%, white),
+    color-mix(in oklch, var(--color-info) 70%, transparent)
+  );
+  box-shadow:
+    0 0 40px color-mix(in oklch, var(--color-info) 35%, transparent),
+    0 20px 50px -20px rgb(0 0 0 / 0.5);
+}
+
+.profile-blob-glow {
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in oklch, var(--color-info) 45%, transparent) 0%,
+    transparent 70%
+  );
+  filter: blur(28px);
+}
+
+@keyframes profile-blob-morph {
+  0%,
+  100% {
+    border-radius: 38% 62% 58% 42% / 42% 38% 62% 58%;
+  }
+  50% {
+    border-radius: 58% 42% 38% 62% / 62% 58% 42% 38%;
+  }
+}
+
+.profile-blob-animate {
+  animation: profile-blob-morph 10s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-blob-animate {
+    animation: none;
+  }
+
+  .orb,
+  .text-gradient-animate,
+  .btn-shine::after {
+    animation: none !important;
+  }
+}
+
+/* ── Animated background orbs ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: orb-float 12s ease-in-out infinite;
+}
+
+.orb-1 {
+  top: -10%;
+  left: -5%;
+  background: color-mix(in oklch, var(--color-info) 60%, transparent);
+}
+
+.orb-2 {
+  top: 40%;
+  right: -10%;
+  background: color-mix(in oklch, var(--color-primary) 50%, transparent);
+  animation-duration: 16s;
+}
+
+.orb-3 {
+  bottom: -5%;
+  left: 30%;
+  background: color-mix(in oklch, var(--color-secondary) 40%, transparent);
+  animation-duration: 14s;
+}
+
+@keyframes orb-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(color-mix(in oklch, var(--color-info) 30%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklch, var(--color-info) 30%, transparent) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Gradient animated text ── */
+.text-gradient-animate {
+  background: linear-gradient(
+    90deg,
+    var(--color-info),
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-info)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ── Button shine sweep ── */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(255 255 255 / 0.25),
+    transparent
+  );
+  animation: shine-sweep 3s ease-in-out infinite;
+}
+
+@keyframes shine-sweep {
+  0% { left: -100%; }
+  50%, 100% { left: 150%; }
+}
+
+.nav-link-glow:hover {
+  text-shadow: 0 0 12px color-mix(in oklch, var(--color-info) 60%, transparent);
+}
