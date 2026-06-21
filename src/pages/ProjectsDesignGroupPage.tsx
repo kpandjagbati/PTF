@@ -65,7 +65,7 @@ const ProjectsDesignGroupPage = () => {
           <img src={logo.src} alt={meta.title} className={`h-full w-full ${logo.className}`} />
         </div>
         <div>
-          <h1 className="text-3xl font-bold uppercase text-info">{meta.title}</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-info text-balance">{meta.title}</h1>
           <p className="mt-1 text-sm text-base-content/60">{meta.subtitle}</p>
         </div>
       </div>

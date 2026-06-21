@@ -20,7 +20,7 @@ const Layout = ({ onContactClick, showContactForm, onCloseContact }: LayoutProps
     <div className="min-h-screen relative overflow-x-hidden">
       <AnimatedBackground />
 
-      <div className="p-5 md:px-[15%]">
+      <div className="page-container py-2">
         <Navbar />
       </div>
 

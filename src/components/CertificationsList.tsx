@@ -26,7 +26,7 @@ const CertificationsList = () => {
                 </p>
               </div>
             </div>
-            <div className="flex gap-4 shrink-0">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <div className="rounded-xl bg-base-100 px-5 py-3 text-center border border-base-content/10">
                 <p className="text-2xl font-bold text-info">{certifications.length}</p>
                 <p className="text-xs text-base-content/60">Certificats</p>
@@ -67,12 +67,12 @@ const CertificationsList = () => {
 
       {preview && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-black/70 p-4 pt-12 sm:pt-4 backdrop-blur-sm overflow-y-auto"
           onClick={() => setPreview(null)}
           role="presentation"
         >
           <div
-            className="relative max-h-[90vh] max-w-4xl w-full"
+            className="relative max-h-[90vh] max-w-4xl w-full my-auto"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-label={`Aperçu — ${preview.name}`}
@@ -80,7 +80,7 @@ const CertificationsList = () => {
             <button
               type="button"
               onClick={() => setPreview(null)}
-              className="btn btn-circle btn-sm absolute -top-3 -right-3 z-10 bg-base-100"
+              className="btn btn-circle btn-sm absolute top-2 right-2 sm:-top-3 sm:-right-3 z-10 bg-base-100 shadow-md"
               aria-label="Fermer l'aperçu"
             >
               <X className="h-4 w-4" />

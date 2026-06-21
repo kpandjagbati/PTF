@@ -21,6 +21,20 @@ body {
   @apply scroll-mt-24;
 }
 
+.page-container {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.fab-bottom {
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 640px) {
+  .fab-bottom {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 .card-hover {
   @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
 }
@@ -47,7 +61,7 @@ body {
     animation: none;
   }
 
-  .skills-marquee-wrapper .overflow-hidden {
+  .skills-marquee-wrapper .skills-marquee-animated {
     display: none;
   }
 

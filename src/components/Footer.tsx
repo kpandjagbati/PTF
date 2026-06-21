@@ -9,7 +9,7 @@ interface FooterProps {
 
 const Footer = ({ onContactClick }: FooterProps) => {
   return (
-    <footer className="footer footer-center bg-base-300 border-t border-base-content/10 p-10 mt-10">
+    <footer className="footer footer-center bg-base-300 border-t border-base-content/10 px-4 py-8 sm:p-10 mt-10">
       <aside className="flex flex-col items-center gap-2">
         <Box className="w-10 h-10 text-info" />
         <p className="font-bold text-xl">

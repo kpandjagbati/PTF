@@ -26,7 +26,7 @@ function App() {
           <Route
             path="/certifications"
             element={
-              <main className="p-5 md:px-[15%]">
+              <main className="page-container py-6 md:py-8">
                 <CertificationsPage />
               </main>
             }
@@ -34,7 +34,7 @@ function App() {
           <Route
             path="/projets/developpement"
             element={
-              <main className="p-5 md:px-[15%]">
+              <main className="page-container py-6 md:py-8">
                 <ProjectsDevPage />
               </main>
             }
@@ -42,7 +42,7 @@ function App() {
           <Route
             path="/projets/design"
             element={
-              <main className="p-5 md:px-[15%]">
+              <main className="page-container py-6 md:py-8">
                 <ProjectsDesignPage />
               </main>
             }
@@ -50,7 +50,7 @@ function App() {
           <Route
             path="/projets/design/:rubric"
             element={
-              <main className="p-5 md:px-[15%]">
+              <main className="page-container py-6 md:py-8">
                 <ProjectsDesignGroupPage />
               </main>
             }

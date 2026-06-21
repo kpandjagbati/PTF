@@ -18,7 +18,7 @@ const ThemeSettings = () => {
       <motion.button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="btn btn-primary btn-circle fixed bottom-6 left-6 z-40 shadow-lg shadow-primary/30"
+        className="btn btn-primary btn-circle fixed fab-bottom left-4 sm:left-6 z-40 shadow-lg shadow-primary/30"
         aria-label="Réglages de couleur"
         aria-expanded={open}
         whileHover={{ scale: 1.1 }}
@@ -42,7 +42,7 @@ const ThemeSettings = () => {
             <motion.div
               role="dialog"
               aria-labelledby="theme-settings-title"
-              className="fixed bottom-20 left-4 right-4 md:left-6 md:right-auto md:w-80 z-50 rounded-2xl border border-base-content/10 bg-base-200 p-5 shadow-2xl"
+              className="fixed left-4 right-4 sm:left-6 sm:right-auto sm:w-80 z-50 rounded-2xl border border-base-content/10 bg-base-200 p-5 shadow-2xl max-h-[70dvh] overflow-y-auto bottom-[calc(5rem+env(safe-area-inset-bottom,0px))] sm:bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))]"
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}

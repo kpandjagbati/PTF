@@ -110,16 +110,16 @@ const Experiences = () => {
                   </div>
 
                   <div className="card-hover min-w-0 flex-1 rounded-2xl border border-base-content/10 bg-base-200 p-5 md:p-6 shadow-lg">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                       <div className="min-w-0">
-                        <h3 className="text-lg font-bold text-info md:text-xl">
+                        <h3 className="text-base sm:text-lg font-bold text-info md:text-xl">
                           {experience.role}
                         </h3>
-                        <p className="mt-0.5 text-sm font-medium text-base-content/90">
+                        <p className="mt-0.5 text-sm font-medium text-base-content/90 break-words">
                           {experience.company}
                         </p>
                       </div>
-                      <time className="badge badge-outline badge-info shrink-0 whitespace-nowrap">
+                      <time className="badge badge-outline badge-info shrink-0 self-start text-xs sm:text-sm whitespace-normal sm:whitespace-nowrap max-w-full">
                         {experience.period}
                       </time>
                     </div>

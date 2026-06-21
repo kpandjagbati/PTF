@@ -41,7 +41,7 @@ const PortfolioHub = () => {
           </Link>
         </BlurFade>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <BlurFade inView delay={0.2} direction="up">
             <Link
               to={PROJECT_ROUTES.development}

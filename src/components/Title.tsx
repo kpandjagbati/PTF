@@ -12,7 +12,7 @@ const Title = ({ title }: TitleProps) => {
         as="h1"
         by="word"
         animation="blurInUp"
-        className="uppercase font-bold text-center text-4xl w-full"
+        className="uppercase font-bold text-center text-2xl sm:text-3xl md:text-4xl w-full leading-tight text-balance"
       >
         {title}
       </TextAnimate>

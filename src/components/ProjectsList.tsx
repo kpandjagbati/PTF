@@ -29,14 +29,14 @@ const ProjectsList = ({ projects, variant = "development" }: ProjectsListProps) 
               alt={project.name}
               className={`w-full transition-transform duration-500 hover:scale-105 ${
                 isDesign
-                  ? "h-80 object-contain object-center p-2"
-                  : "h-52 object-cover"
+                  ? "aspect-[3/4] sm:aspect-[4/5] object-contain object-center p-2 max-h-72 sm:max-h-80"
+                  : "h-44 sm:h-52 object-cover"
               }`}
             />
           </div>
           <div className="p-5 flex flex-col flex-1">
             <div className="flex items-start justify-between gap-2">
-              <h3 className="font-bold text-lg">{project.name}</h3>
+              <h3 className="font-bold text-base sm:text-lg min-w-0 break-words">{project.name}</h3>
               {project.status && (
                 <span className="badge badge-warning badge-sm shrink-0">{project.status}</span>
               )}

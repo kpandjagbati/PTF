@@ -81,7 +81,7 @@ const ContactForm = ({ onClose }: { onClose: () => void }) => {
             exit={{ opacity: 0 }}
         >
             <motion.div
-                className="bg-base-100 p-6 rounded-lg shadow-xl w-full max-w-md"
+                className="bg-base-100 p-5 sm:p-6 rounded-lg shadow-xl w-full max-w-md max-h-[90dvh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
                 role="dialog"
                 aria-labelledby="contact-form-title"
@@ -157,18 +157,18 @@ const ContactForm = ({ onClose }: { onClose: () => void }) => {
                             />
                         </div>
 
-                        <div className="modal-action">
+                        <div className="flex flex-col-reverse sm:flex-row sm:justify-end gap-2 pt-2">
                             <button
                                 type="button"
                                 onClick={onClose}
-                                className="btn btn-ghost"
+                                className="btn btn-ghost w-full sm:w-auto"
                                 disabled={isSubmitting}
                             >
                                 Annuler
                             </button>
                             <button
                                 type="submit"
-                                className={`btn btn-primary ${isSubmitting ? 'loading' : ''}`}
+                                className={`btn btn-primary w-full sm:w-auto ${isSubmitting ? 'loading' : ''}`}
                                 disabled={isSubmitting}
                             >
                                 {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}

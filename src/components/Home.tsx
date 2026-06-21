@@ -19,7 +19,7 @@ const Home = ({ onContactClick }: HomeProps) => {
   return (
     <motion.section
       id="accueil"
-      className="section-spacing relative flex flex-col-reverse md:flex-row justify-center items-center md:my-24 my-10 px-4"
+      className="section-spacing relative flex flex-col-reverse md:flex-row justify-center items-center gap-8 md:gap-12 md:my-16 lg:my-24 my-8 overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={container3D}
@@ -28,7 +28,7 @@ const Home = ({ onContactClick }: HomeProps) => {
 
       <div className="flex flex-col max-w-2xl relative z-10">
         <motion.h1
-          className="text-5xl md:text-6xl font-extrabold text-center md:text-left mt-4 md:mt-0"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-center md:text-left mt-4 md:mt-0 leading-tight"
         >
           {title.map((word, i) => (
             <motion.span
@@ -124,7 +124,7 @@ const Home = ({ onContactClick }: HomeProps) => {
         className="md:ml-12 lg:ml-16 mt-10 md:mt-0 shrink-0 relative z-10"
         variants={image3D}
       >
-        <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+        <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto md:mx-0">
           <motion.div
             className="profile-blob profile-blob-glow profile-blob-animate absolute -inset-6 -z-10 opacity-80"
             aria-hidden

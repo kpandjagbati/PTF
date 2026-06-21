@@ -21,13 +21,13 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="p-5 md:px-[15%]">
+      <div className="page-container py-6 md:py-8">
         <Home onContactClick={onContactClick} />
       </div>
 
       <About />
 
-      <main className="p-5 md:px-[15%]">
+      <main className="page-container py-6 md:py-8">
         <Experiences />
         <PortfolioHub />
       </main>
