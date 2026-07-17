@@ -12,7 +12,7 @@ interface SkillsMarqueeProps {
 const SkillItem = ({ skill, compact = false }: { skill: Skill; compact?: boolean }) => (
   <div className={`group flex shrink-0 flex-col items-center ${compact ? "w-20 px-1" : "w-24 sm:w-28 px-2 sm:px-3"}`}>
     <div
-      className={`flex items-center justify-center rounded-full border-2 border-primary/60 p-2 transition-all duration-300 group-hover:scale-110 group-hover:border-info group-hover:shadow-lg group-hover:shadow-info/20 ${
+      className={`flex items-center justify-center rounded-full border-2 border-primary/60 p-2 transition-all duration-300 group-hover:scale-110 group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/20 ${
         compact ? "h-16 w-16" : "h-16 w-16 sm:h-20 sm:w-20"
       }`}
     >

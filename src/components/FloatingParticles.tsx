@@ -15,7 +15,7 @@ const FloatingParticles = () => {
       {particles.map((p) => (
         <motion.span
           key={p.id}
-          className="absolute rounded-full bg-info/40 blur-[1px]"
+          className="absolute rounded-full bg-primary/40 blur-[1px]"
           style={{
             width: p.size,
             height: p.size,

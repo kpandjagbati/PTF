@@ -61,11 +61,11 @@ const ProjectsDesignGroupPage = () => {
       </BlurFade>
 
       <div className="mb-2 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-xl ring-2 ring-info/25 bg-base-100">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-box ring-2 ring-primary/25 bg-base-100">
           <img src={logo.src} alt={meta.title} className={`h-full w-full ${logo.className}`} />
         </div>
         <div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-info text-balance">{meta.title}</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-primary text-balance">{meta.title}</h1>
           <p className="mt-1 text-sm text-base-content/60">{meta.subtitle}</p>
         </div>
       </div>
@@ -75,7 +75,7 @@ const ProjectsDesignGroupPage = () => {
       {projects.length > 0 ? (
         <ProjectsList projects={projects} variant="design" />
       ) : (
-        <div className="rounded-2xl border border-dashed border-base-content/20 bg-base-200 p-12 text-center">
+        <div className="rounded-box border border-dashed border-base-content/20 bg-base-200 p-12 text-center">
           <p className="text-base-content/60">
             Les visuels de cette rubrique seront bientôt disponibles.
           </p>

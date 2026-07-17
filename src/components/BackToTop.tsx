@@ -17,7 +17,7 @@ const BackToTop = () => {
         <motion.button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="btn btn-info btn-circle fixed fab-bottom right-4 sm:right-6 z-40 shadow-lg shadow-info/30"
+          className="btn btn-primary btn-circle fixed fab-bottom right-4 sm:right-6 z-40 shadow-lg"
           aria-label="Retour en haut"
           initial={{ opacity: 0, scale: 0, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

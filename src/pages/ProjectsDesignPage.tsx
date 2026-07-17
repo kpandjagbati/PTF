@@ -12,7 +12,7 @@ const rubrics = [
     key: "tcc" as const,
     to: PROJECT_ROUTES.designTcc,
     logo: tccLogo,
-    logoClassName: "object-contain bg-white p-1",
+    logoClassName: "object-contain bg-base-100 p-1",
     ...DESIGN_GROUPS.tcc,
     count: getDesignProjectsByGroup("tcc").length,
   },
@@ -20,7 +20,7 @@ const rubrics = [
     key: "aelet" as const,
     to: PROJECT_ROUTES.designAelet,
     logo: aeletLogo,
-    logoClassName: "object-contain bg-white p-0.5 rounded-full",
+    logoClassName: "object-contain bg-base-100 p-0.5 rounded-full",
     ...DESIGN_GROUPS.aelet,
     count: getDesignProjectsByGroup("aelet").length,
   },
@@ -38,7 +38,7 @@ const ProjectsDesignPage = () => {
 
       <Title title="Projets — Design" />
 
-      <div className="mb-8 flex flex-wrap gap-2">
+      <div className="mb-8 flex flex-wrap gap-2 items-center">
         <span className="badge badge-secondary">Design</span>
         <Link to={PROJECT_ROUTES.development} className="btn btn-ghost btn-sm">
           ← Voir Développement
@@ -53,32 +53,35 @@ const ProjectsDesignPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {rubrics.map((rubric, index) => (
           <BlurFade key={rubric.key} inView delay={0.1 + index * 0.1} direction="up">
-            <Link
-              to={rubric.to}
-              className="card-hover group flex h-full min-h-56 flex-col rounded-2xl border border-base-content/10 bg-base-300 p-6 shadow-lg"
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-xl ring-2 ring-info/25 bg-base-100">
-                  <img
-                    src={rubric.logo}
-                    alt={rubric.title}
-                    className={`h-full w-full ${rubric.logoClassName}`}
-                  />
+            <Link to={rubric.to} className="card card-hover bg-base-200 shadow-md h-full min-h-56">
+              <div className="card-body">
+                <div className="flex items-start gap-4">
+                  <div className="avatar">
+                    <div className="w-16 rounded-box ring ring-primary/25 ring-offset-base-100 ring-offset-1">
+                      <img
+                        src={rubric.logo}
+                        alt={rubric.title}
+                        className={rubric.logoClassName}
+                      />
+                    </div>
+                  </div>
+                  <div className="min-w-0">
+                    <h2 className="card-title text-xl text-primary">{rubric.title}</h2>
+                    <p className="mt-1 text-xs text-base-content/60">{rubric.subtitle}</p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <h2 className="text-xl font-bold text-info">{rubric.title}</h2>
-                  <p className="mt-1 text-xs text-base-content/60">{rubric.subtitle}</p>
+
+                <p className="flex-1 text-sm leading-relaxed text-base-content/75">
+                  {rubric.description}
+                </p>
+
+                <div className="card-actions">
+                  <span className="btn btn-link btn-secondary no-underline gap-2 px-0">
+                    {rubric.count} visuel{rubric.count > 1 ? "s" : ""} — Voir la rubrique
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
                 </div>
               </div>
-
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-base-content/75">
-                {rubric.description}
-              </p>
-
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-secondary group-hover:gap-3 transition-all">
-                {rubric.count} visuel{rubric.count > 1 ? "s" : ""} — Voir la rubrique
-                <ArrowRight className="h-4 w-4" />
-              </span>
             </Link>
           </BlurFade>
         ))}

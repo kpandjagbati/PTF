@@ -57,7 +57,7 @@ const Home = ({ onContactClick }: HomeProps) => {
           {techStack.map((tech, i) => (
             <motion.span
               key={tech}
-              className="badge badge-outline badge-info badge-sm"
+              className="badge badge-primary badge-outline badge-sm"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.9 + i * 0.1, type: "spring", stiffness: 200 }}
@@ -95,7 +95,7 @@ const Home = ({ onContactClick }: HomeProps) => {
             <motion.button
               type="button"
               onClick={onContactClick}
-              className="btn btn-info w-full sm:w-auto group btn-shine"
+              className="btn btn-primary w-full sm:w-auto group btn-shine"
               variants={button3D}
               whileHover="hover"
               whileTap="tap"
@@ -108,7 +108,7 @@ const Home = ({ onContactClick }: HomeProps) => {
               download={CV_FILENAME}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline btn-primary w-full sm:w-auto group btn-shine"
+              className="btn btn-outline btn-secondary w-full sm:w-auto group btn-shine"
               variants={button3D}
               whileHover="hover"
               whileTap="tap"
@@ -141,7 +141,7 @@ const Home = ({ onContactClick }: HomeProps) => {
           </div>
 
           <motion.div
-            className="absolute -top-2 -right-2 h-4 w-4 rounded-full bg-info shadow-lg shadow-info/50"
+            className="absolute -top-2 -right-2 h-4 w-4 rounded-full bg-primary shadow-lg shadow-primary/50"
             animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
             aria-hidden

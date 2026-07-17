@@ -11,6 +11,10 @@ export interface ThemeOption {
 export const THEME_STORAGE_KEY = "aris-theme";
 
 export const THEMES: ThemeOption[] = [
+  { id: "fantasy", label: "Fantasy", group: "light", preview: "#6e0b75" },
+  { id: "light", label: "Light", group: "light", preview: "#570df8" },
+  { id: "winter", label: "Winter", group: "light", preview: "#047aed" },
+  { id: "pastel", label: "Pastel", group: "light", preview: "#d1c1d7" },
   { id: "night", label: "Night", group: "dark", preview: "#38bdf8" },
   { id: "dark", label: "Dark", group: "dark", preview: "#661ae6" },
   { id: "dim", label: "Dim", group: "dark", preview: "#9fe88d" },
@@ -20,12 +24,9 @@ export const THEMES: ThemeOption[] = [
   { id: "aqua", label: "Aqua", group: "dark", preview: "#09ecf3" },
   { id: "sunset", label: "Sunset", group: "dark", preview: "#ff865b" },
   { id: "luxury", label: "Luxury", group: "dark", preview: "#ffffff" },
-  { id: "light", label: "Light", group: "light", preview: "#570df8" },
-  { id: "winter", label: "Winter", group: "light", preview: "#047aed" },
-  { id: "pastel", label: "Pastel", group: "light", preview: "#d1c1d7" },
 ];
 
-export const DEFAULT_THEME = "night";
+export const DEFAULT_THEME = "fantasy";
 
 export const getThemeById = (id: string) =>
   THEMES.find((t) => t.id === id) ?? THEMES[0];
