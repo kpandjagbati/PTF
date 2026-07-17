@@ -2,6 +2,7 @@ import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import saasLanding from "../assets/projects/saas-landing.png";
 import project4 from "../assets/projects/project4.jpg";
+import xogga from "../assets/projects/xogga.png";
 import tccDigitalManager from "../assets/projects/design/tcc-digital-manager.png";
 import tccDevopsEngineer from "../assets/projects/design/tcc-devops-engineer.png";
 import tccPromptEngineering from "../assets/projects/design/tcc-prompt-engineering.png";
@@ -25,6 +26,17 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 12,
+    name: "Xogga — Facturation",
+    image: xogga,
+    description:
+      "Application web de gestion de facturation : clients, factures HT / TVA / TTC, export PDF & Excel, profil entreprise et dashboard admin.",
+    technologies: ["Next.js", "React", "TypeScript", "Prisma", "PostgreSQL", "Auth.js", "Tailwind CSS"],
+    category: "development",
+    demoLink: "https://xogga.vercel.app/",
+    repoLink: "https://github.com/kpandjagbati/XOGGA",
+  },
   {
     id: 1,
     name: "Web App TimeTable",
